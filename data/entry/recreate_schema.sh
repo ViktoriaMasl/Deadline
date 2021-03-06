@@ -1,1 +1,0 @@
-mysql -u app app -p$MYSQL_PASSWORD < schema.sql
