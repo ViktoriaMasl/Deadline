@@ -46,8 +46,7 @@ public class Autotest {
     @Test
     void shouldBlockedPersonalAccount() {
         val loginPage = new LoginPage();
-        val authInfo = DataHelper.getAuthInfoCorrectPassword();
-        val verificationPage = loginPage.validLogin(authInfo);
-        verificationPage.blockedCode(DataHelper.getWrongVerificationCode().getCode());
+        val authInfo = DataHelper.getAuthInfoWrongPassword();
+        loginPage.blockedPass(authInfo);
     }
 }

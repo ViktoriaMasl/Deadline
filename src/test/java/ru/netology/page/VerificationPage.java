@@ -26,12 +26,4 @@ public class VerificationPage {
         verifyButton.click();
         $(withText("Ошибка!")).shouldBe(Condition.visible);
     }
-
-    public void blockedCode(String verificationCode) {
-        codeField.setValue(verificationCode);
-        verifyButton.click();
-        verifyButton.click();
-        verifyButton.click();
-        $(withText("Ошибка! Ваш аккаунт заблокирован")).shouldBe(Condition.visible);
-    }
 }

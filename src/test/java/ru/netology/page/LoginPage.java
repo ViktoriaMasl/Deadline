@@ -27,4 +27,14 @@ public class LoginPage {
         loginButton.click();
         $(withText("Ошибка!")).shouldBe(Condition.visible);
     }
+
+    public void blockedPass(DataHelper.AuthInfo info) {
+        loginField.setValue(info.getLogin());
+        passwordField.sendKeys(Keys.CONTROL + "A" + Keys.DELETE);
+        passwordField.setValue(info.getPassword());
+        loginButton.click();
+        loginButton.click();
+        loginButton.click();
+        $(withText("Ошибка! Ваш аккаунт заблокирован")).shouldBe(Condition.visible);
+    }
 }
